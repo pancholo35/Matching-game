@@ -1,0 +1,22 @@
+a {
+  color: white;
+  background-color: black;
+  border-color: black;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 150px 150px 150px;
+  grid-gap: 10px;
+
+  justify-content: center;
+}
+
+.card {
+  background-color: aquamarine;
+  border-color: black;
+  border-radius: 5px;
+}
