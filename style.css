@@ -24,3 +24,7 @@ section {
 img {
   max-width: 98px;
 }
+
+.card-image {
+  visibility: hidden;
+}
