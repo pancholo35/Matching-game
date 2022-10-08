@@ -9,7 +9,23 @@ const images = [
   "<img class='card-image' src='https://external-content.duckduckgo.com" +
     '/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.' +
     'BxylcSBY2WtUdKpjMhp9QAAAAA%26pid%3DApi&f=1&ipt=f66cb781' +
-    "9e3c7a82c1370929a704eb76bce853df85f1a72f70fbfd73ba237de9&ipo=images'>"
+    "9e3c7a82c1370929a704eb76bce853df85f1a72f70fbfd73ba237de9&ipo=images'>",
+  "<img class='card_image' src='https://external-content.duckduckgo.com" +
+    '/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.Ud2io4Y43q1VOaDJ1j' +
+    'PXTgAAAA%26pid%3DApi&f=1&ipt=589cce782cef3183ef9c4fe399640ae9c879dda16fc1ae' +
+    "95e2a396002ed2ff2c&ipo=images'>",
+  "<img class='card_image' src='https://external-content.duckduckgo.com" +
+    '/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.mTHW1IKZYoLI2RF6eSiAaAAAAA' +
+    '%26pid%3DApi&f=1&ipt=b7f7cac5af1277ee6893e16471be128c0a3746559dba83ab' +
+    "59202c57ce851738&ipo=images'>",
+  "<img class='card-image' src='https://external-content.duckduckgo.com" +
+    '/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.KMxinQ5wKvVWCRg' +
+    'BRVrrfgAAAA%26pid%3DApi&f=1&ipt=e2662b6a934f59b1eeda7fe97c253d414cf49c' +
+    "9a9ffedb3255c8e9f9260791a3&ipo=images'>",
+  "<img class='card_image' src='https://external-content.duckduckgo.com" +
+    '/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.jLU-6dbPtiFzSIQX' +
+    'Qp8lwwAAAA%26pid%3DApi&f=1&ipt=fd81b8c61a73eddaed11349823065e16aaae9008' +
+    "65d60a625cf2cec22f82b8c9&ipo=images'>"
 ]
 
 const cardNode = document.querySelectorAll('.card')
