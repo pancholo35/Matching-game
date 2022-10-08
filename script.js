@@ -87,7 +87,7 @@ for (let i = 0; i < cards.length; i++) {
           2000
         )
         setTimeout('cardsClicked = 0', 2000)
-        await new Promise(() => setTimeout(3000))
+        await new Promise(() => setTimeout(3000)) //code credit https://www.linkedin.com/pulse/nodejs-16-settimeout-asyncawait-igor-gonchar/
       }
     } else if (cardsClicked > 2) {
       cardsClicked = 0
