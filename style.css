@@ -1,3 +1,13 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.FgGWSRnfc58-g_Hw__glrAHaEo%26pid%3DApi&f=1&ipt=7f282056535c2e468f7b5eb1ec5f6b385636562fe7398955d7607439c2040611&ipo=images);
+  background-size: cover;
+}
+
 a {
   color: white;
   background-color: black;
@@ -27,4 +37,8 @@ img {
 
 .card-image {
   visibility: hidden;
+}
+
+#restart-button {
+  margin-bottom: 5px;
 }

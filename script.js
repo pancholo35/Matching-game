@@ -1,6 +1,7 @@
 //variables
 let previousCard
 let cardsClicked = 0
+let matches = 0
 const images = [
   "<img class='card-image' src='https://external-content.duckduckgo.com" +
     '/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.' +
@@ -63,10 +64,36 @@ const assignImages = () => {
 
 const checkMatch = (frstCard, scndCard) => {
   if (frstCard.innerHTML === scndCard.innerHTML) {
+    matches++
     console.log('Match!')
+    cardNode[cards.indexOf(frstCard)].removeEventListener('click', () => {
+      flipCards(i)
+    })
+    cardNode[cards.indexOf(scndCard)].removeEventListener('click', () => {
+      flipCards(i)
+    })
+    if (matches == 6) {
+      displayWin()
+    }
     return true
   }
   return false
+}
+
+const displayWin = () => {
+  document.querySelector('header').innerHTML =
+    '<h1>WIN!</h1>' + '<button id="restart-button">Restart?</button>'
+
+  document.querySelector('#restart-button').addEventListener('click', () => {
+    previosCard = ''
+    cardsClicked = 0
+    matches = 0
+
+    document.querySelector('header').innerHTML = '<h1>Matching Game</h1>'
+
+    clearImages()
+    assignImages()
+  })
 }
 
 const clearImages = () => {
@@ -75,38 +102,45 @@ const clearImages = () => {
   }
 }
 
+const flipCards = async (index) => {
+  cardsClicked++
+  console.log(cardsClicked)
+  if (cardsClicked <= 2) {
+    console.log(cardNode[index].innerHTML)
+    cardNode[index].children[0].classList.toggle('card-image')
+  }
+  if (cardsClicked === 2) {
+    if (
+      previousCard !== cardNode[index] &&
+      checkMatch(previousCard, cards[index])
+    ) {
+      cardsClicked = 0
+      console.log('card check ' + cardsClicked)
+      //cards[i].removeEventListener('click', () => {})
+    } else {
+      console.log('do i exist?')
+      setTimeout(
+        'cardNode[cards.indexOf(previousCard)].children[0].classList.toggle("card-image")',
+        2000
+      )
+      setTimeout(
+        `cardNode[${index}].children[0].classList.toggle("card-image")`,
+        2000
+      )
+      cardsClicked = 0
+      await new Promise(() => setTimeout(3000)) //code credit https://www.linkedin.com/pulse/nodejs-16-settimeout-asyncawait-igor-gonchar/
+    }
+  } else if (cardsClicked > 2) {
+    cardsClicked = 0
+  }
+  previousCard = cardNode[index]
+}
+
 assignImages() //assign images
 
 //event listeners
 for (let i = 0; i < cards.length; i++) {
-  cardNode[i].addEventListener('click', async () => {
-    cardsClicked++
-    console.log(cardsClicked)
-    if (cardsClicked <= 2) {
-      console.log(cardNode[i].innerHTML)
-      cardNode[i].children[0].classList.toggle('card-image')
-    }
-    if (cardsClicked === 2) {
-      if (checkMatch(previousCard, cards[i])) {
-        cardsClicked = 0
-        console.log('card check ' + cardsClicked)
-        //cards[i].removeEventListener('click', () => {})
-      } else {
-        console.log('do i exist?')
-        setTimeout(
-          'cardNode[cards.indexOf(previousCard)].children[0].classList.toggle("card-image")',
-          2000
-        )
-        setTimeout(
-          `cardNode[${i}].children[0].classList.toggle("card-image")`,
-          2000
-        )
-        setTimeout('cardsClicked = 0', 2000)
-        await new Promise(() => setTimeout(3000)) //code credit https://www.linkedin.com/pulse/nodejs-16-settimeout-asyncawait-igor-gonchar/
-      }
-    } else if (cardsClicked > 2) {
-      cardsClicked = 0
-    }
-    previousCard = cardNode[i]
+  cardNode[i].addEventListener('click', () => {
+    flipCards(i)
   })
 }
