@@ -36,14 +36,28 @@ const assignImages = () => {
   images.forEach((image) => {
     let rdmCard1 = cardNode[Math.floor(Math.random() * cards.length)]
     let rdmCard2 = cardNode[Math.floor(Math.random() * cards.length)]
-    console.log(rdmCard1.innerHTML)
-    console.log(rdmCard2.innerHTML)
-    if (rdmCard1.innerHTML !== '' || rdmCard2.innerHTML !== '') {
+    while (
+      rdmCard1.innerHTML !== '' ||
+      rdmCard2.innerHTML !== '' ||
+      rdmCard1 === rdmCard2
+    ) {
       rdmCard1 = cardNode[Math.floor(Math.random() * cards.length)]
       rdmCard2 = cardNode[Math.floor(Math.random() * cards.length)]
     }
     cardNode[cards.indexOf(rdmCard1)].innerHTML = image
     cardNode[cards.indexOf(rdmCard2)].innerHTML = image
+    console.log(
+      cardNode[cards.indexOf(rdmCard1)].innerHTML +
+        cards.indexOf(rdmCard1) +
+        ' || rdmCard1: ' +
+        images.indexOf(image)
+    )
+    console.log(
+      cardNode[cards.indexOf(rdmCard2)].innerHTML +
+        cards.indexOf(rdmCard2) +
+        ' || rdmCard2: ' +
+        images.indexOf(image)
+    )
   })
 }
 
@@ -69,6 +83,7 @@ for (let i = 0; i < cards.length; i++) {
     cardsClicked++
     console.log(cardsClicked)
     if (cardsClicked <= 2) {
+      console.log(cardNode[i].innerHTML)
       cardNode[i].children[0].classList.toggle('card-image')
     }
     if (cardsClicked === 2) {
