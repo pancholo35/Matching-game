@@ -22,26 +22,34 @@
 
 ### **_Getting Started_**
 
-#### The project itself was deployed and can be viewed [here](URL)
+#### The project itself was deployed and can be viewed [here](fieldoffriends.surge.sh)
 
 ---
 
 ### **_Screenshots_**
 
-#### Image 1
+#### Start screen:
 
-![placeholder](URL)
+![Start screen](start_screen.jpeg)
 
-#### Image 2
+#### Start of game:
 
-![placeholder](URL)
+![Start game](game_screen.jpeg)
+
+#### Win message:
+
+![Win message](win_message.jpeg)
 
 ### **_Future Updates_**
 
-- [ ] Future Update 1
-- [x] Completed Update
-- [x] ~~Strikethrough~~
+- [ ] Improve styling
+- [ ] Win counter
+- [ ] Different selectable themes
+- [ ] Card animations
+- [ ] Game sound effects
 
 ### **_Credits_**
+
+- Line 131 credit https://www.linkedin.com/pulse/nodejs-16-settimeout-asyncawait-igor-gonchar/
 
 #### To whomever gets credited: Thank You!
